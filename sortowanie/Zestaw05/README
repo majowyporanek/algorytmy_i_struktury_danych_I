@@ -1,0 +1,29 @@
+autor: Klaudia Chwistek 16.12.2022
+
+1. Katalog zawiera:
+    BubbleSort.cpp - implementacja BubbleSort
+    InsertionSort.cpp - implementacja InsertionSort
+    SelectionSort.cpp - implementacja SelectionSort
+
+
+
+2. Zliczanie głównych operacji dla BubbleSort:
+
+    dla losowo wygenerowanych danych (30 el.)
+    compare: 435
+    swap: 158
+
+
+    dla już posortowanych danych (30 el):
+    compare: 435
+    swap: 0
+
+
+    dla posortowanych danych w kolejności malejącej(30 el.):
+    compare: 435
+    swap: 435
+
+
+    BubbleSort w ogólności ma złożoność O(n^2) dlatego ilość porównań nie zależy od tego czy dane wejściowe są już posortowane czy nie. 
+    Ilość porównań zależy od ilości nieposortowanych elementów dlatego można byłoby zooptymalizować BubbleSort, który będzie przerywał działanie w momencie gdy po pierwszej iteracji,
+    liczba swaps wyniesie 0. Wtedy złożonośc obliczeniowa operacji swap wyniesie O(N).

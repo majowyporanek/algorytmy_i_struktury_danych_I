@@ -1,0 +1,30 @@
+autor: Klaudia Chwistek                                          21.10.2022
+
+Folder zawiera:
+	1. ArrayStack.hpp - implementacja tablicowa stosu
+	2. LinkedStack.hpp - implementacja wskazniokowa stosu
+	3. Genertor.cpp - program generujace dane wejsciowe dla programu
+	4. Stack.cpp - program obslugujacy 
+		• A x - połóż na stos liczbę 0 ≤ x ≤ 106
+		• D - zdejmij element ze stosu i go wypisz, jeśli stos/kolejka jest pusta wypisz “EMPTY”
+		• S - wypisz liczbę elementów na stosie lub w kolejce 
+	5. ONP.cpp - implementacja zamiany wyrazania arytmetycznego na ONP
+
+odpowiedzi na pytania: 
+• Co to jest stos?
+	to podstawowa struktura danych (abstrakcyjny typ danych), która implementuje
+zbiory dynamiczne. Elementy są usuwane ze stosu w kolejności od najpóźniej dodanego (strategia
+last-in, first-out - LIFO).
+• Omów przykłady zastosowania stosu?
+	- przechowywanie zmiennych lokalnych, argumentow funkcji
+	- do chwilowego zapamiętywania rejestrów procesora
+	- w programowaniu wyskopoziomowym
+• Dlaczego operacja pop() z std::stack nie zwraca wartości elementu?
+	Poniewaz jest ona stosowana tylko do usuniecia elementu ze stosu i nie
+zwraca zadnej wartosci (czyli jest to typ funkcji void)
+
+• Dlaczego operacja pop() z std::stack nie zwraca referencji do elementu?
+	Poniewaz sluzy do tego inna operacja - top()
+	stack::top. [metoda] Zwraca referencję na szczytowy element stosu.
+• Do czego służy funkcja std::queue::emplace?
+	dodaje nowe element na koniec kolejki

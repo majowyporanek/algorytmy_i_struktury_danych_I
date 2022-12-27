@@ -1,0 +1,35 @@
+autor: Klaudia Chwistek                                          02.12.2022
+
+Folder zawiera:
+	1. ArrayList.hpp- implementacja tablicowa listy
+	2. CursorList.hpp - implementacja kursorowa listy
+	3. CursorList.cpp, ArrayList.cpp - programy wczytajace ze standardowego wejścia dane wg poniższego formatu
+		• F x - wstaw liczbę 0 ≤ x ≤ 103 na początek listy (ang. front)
+		• B x - wstaw liczbę 0 ≤ x ≤ 103 na koniec listy (ang. back)
+		• f - usuń z listy pierwszy element i go wypisz, jeśli lista jest pusta wypisz “EMPTY”
+		• b - usuń z listy ostatni element i go wypisz, jeśli lista jest pusta wypisz “EMPTY”
+		• R x y - jeżeli x nie jest obecny w liście wypisz FALSE, w przeciwnym razie zastąp pierwsze
+		wystąpienie wartości x przez y i wypisz TRUE (ang. replace)
+		• S - wypisz rozmiar listy
+
+odpowiedzi na pytania: 
+1. Jakie są zalety implementacji wskaźnikowej, a jakie implementacji tablicowej?
+	
+		Zalety implementacji wskaznikowej:
+			- wykorzystujemy tyle pamieci ile potrzebuje dana lista
+			- nie z gory okreslac pojemnosci
+			- szybszy dostep do pojedynczych elementow
+
+			wada -> skoki po pamieci
+
+
+
+		Zalety implementacji tablicowej: 
+			- nie musimy pamietac wskaznikow
+			- nie musimy przejmowac sie zwalnianiem/alokowaniem pamieci
+			- sekwencyjny dostep
+			- mozemy zastosowac binary search
+
+2. Jakie są zalety implementacji kursorowej? 
+	- moze byc zaimplementowana w jezykach programowania nie posiadajacych wskaznikow
+	- nie uzywamy wskaznikow, zatem nie "skaczemy po pamieci"

@@ -1,0 +1,44 @@
+autor: Klaudia Chwistek                                          03.11.2022
+
+Folder zawiera:
+	1. LinkedList.hpp - implementacja wskaznikowa  wskaźnikowa dwukierunkowa listy
+	2. Genertor.cpp - program generujace dane wejsciowe dla programu
+	3. LinkedList.cpp - program wczytajacy ze standardowego wejścia dane wg poniższego formatu wygenerowane
+		przez program Generator.cpp
+			• F x - wstaw liczbę 0 ≤ x ≤ 103 na początek listy (ang. front)
+			• B x - wstaw liczbę 0 ≤ x ≤ 103 na koniec listy (ang. back)
+			• f - usuń z listy pierwszy element i go wypisz, jeśli lista jest pusta wypisz 				“EMPTY”
+			• b - usuń z listy ostatni element i go wypisz, jeśli lista jest pusta wypisz “EMPTY”
+			• R x y - jeżeli x nie jest obecny w liście wypisz FALSE, w przeciwnym razie zastąp 			pierwsze wystąpienie wartości x przez y i wypisz TRUE (ang. replace)
+			• S - wypisz rozmiar listy
+
+ODPOWIEDZI NA PYTANIA:
+	1. Jakie są zalety implementacji wskaźnikowej, a jakie implementacji tablicowej?
+	2. Zastanowić się jak zaimplementować listę dwukierunkową zapamiętując tylko jeden wskaźnik?
+	3. Czym się różni odwołanie uniwersalne od odwołania do r-wartości (dla chętnych)?
+
+
+1.
+ Zalety implementacji wskaźnikowej:
+	* Wykorzystujemy zawsze tyle pamięci, ile potrzebuje dana lista,
+	* Nie ma potrzeby określania ilości potrzebnej pamięci przed uruchomieniem programu 
+
+
+
+ Zalety implementacji tablicowej: 
+ 	* prosta nawigacja wewnątrz listy, 
+	* korzystanie z gotowej struktury tablicy, 
+ 	* szybki dostęp do elementu o konkretnym numerze, 
+	* większa odporność na błędy.
+	* Nie trzeba pamiętać wskaźników
+
+2. Istnieje możliwość realizacji takiej listy, wtedy gdy:
+
+warunek 1: Wskaźnik można utożsamiać z liczbą i wykonywać na nim działania bitowe.
+warunek 2: Wskaźnik pusty ma wartość liczbową 0.
+Wówczas pojedynczy wskaźnik zawiera różnicę symetryczną (xor) wartości liczbowej
+wskaźników na poprzedni i następny element listy. Podczas przechodzenia listy pamiętany
+est rzeczywisty wskaźnik uprzednio odwiedzonego elementu i  można z
+zakodowanej liczby odtworzyć albo poprzedni albo następny element, w zależności 
+od kierunku przeglądania listy. 
+Warunek 2. gwarantuje, że wskaźniki na pierwszej i ostatniej pozycji można odkodować natychmiast

@@ -1,0 +1,33 @@
+autor: Klaudia Chwistek                                          03.11.2022
+
+Folder zawiera:
+	1. ArrayQueue.hpp - implementacja tablicowa kolejki cyklicznej
+	2. LinkedQueue.hpp - implementacja wskazniokowa kolejki
+	3. Genertor.cpp - program generujace dane wejsciowe dla programu
+	4. Queue.cpp - program wczytajacy ze standardowego wejścia dane wg poniższego formatu wygenerowane
+		przez program Generator.cpp
+		• A x - wstaw do kolejki liczbę 0 ≤ x ≤ 106
+		• D - pobierz element z kolejki i go wypisz, jeśli kolejka jest pusta wypisz “EMPTY”
+		• S - wypisz liczbę elementów w kolejce
+	5. Radix.cpp - implementacja algorytmu sortowania pozycyjnego
+
+odpowiedzi na pytania: 
+• Opisz trzy sposoby obsługi cykliczności bufora.
+		- tablica i dwa indeksy (read & write)
+				+ dodawanie elementu - inkrementacja indeksu 'read'
+				- usuwanie elemenu - dodajemy element w miejsce na które wskazuje 'write', inkrementujemy write
+
+		- tablica, jeden indeks i zmienna przechowująca długość "length"
+				+ dodawanie elementu - dodajemy element w miejscu ('read' + 'length') i inkrementujemy 'length'
+				- usuwanie elementu - inkrementacja indeksu 'read' i dekrementacja 'length'
+
+		- tablica i dwa nieograniczone indeksy
+				pozwalamy indeksom rosnąć dopóki liczba się nie przepełni
+
+• Omów przykłady zastosowania kolejki?
+		- Sterowany komputerowo system sygnalizacji ruchu wykorzystuje kolejkę kołową.
+		-	Planowanie procesora i zarządzanie pamięcią.
+
+• Co oznaczają akronimy LIFO i FIFO?
+	- LIFO - Last In First Out - ostatni element na wejściu jest pierwszym elementem na wyjściu (np. STOS)
+	- FIFO - First In First Out -  pierwszy element na wejściu jest pierwszym elementem na wyjściu (np. KOLEJKA)

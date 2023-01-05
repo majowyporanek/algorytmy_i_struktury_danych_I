@@ -24,14 +24,14 @@ public:
     int minimum();
     int maximim();
     int depth();
-    void inorder();
-    void preorder();
-    void postorder();
+    void inorder(Node *r);
+    void preorder(Node *r);
+    void postorder(Node *r);
+    Node* getRoot(){return root;}
 };
 
 BinaryTree::BinaryTree() : size_(0), root(nullptr){}
 BinaryTree::~BinaryTree(){
-    std::cout<<"Destructor";
 }
 
 void BinaryTree::insert(int x) {
@@ -39,7 +39,7 @@ void BinaryTree::insert(int x) {
         //drzewo jest puste
         root = new Node(x);
         size_++;
-        std::cout<<"Drzewo puste"<<std::endl;
+        // std::cout<<"Drzewo puste"<<std::endl;
     }else {
         //drzewo nie jest puste, trzeba sprawdzic pozostale elementy
         Node *current = root;
@@ -135,5 +135,37 @@ int BinaryTree::maximim(){
     return maxEl;
 }
 
+int BinaryTree::depth(){
+    return 0;
+}
+
 int BinaryTree::size(){return size_;}
+
+
+void BinaryTree::preorder(Node *r){
+    if(r !=nullptr){
+        std::cout<<r->value<<std::endl;
+        preorder(r->left);
+        preorder(r->right);
+    }
+}
+
+void BinaryTree::inorder(Node *r){
+    if(r !=nullptr){
+        inorder(r->left);
+        std::cout<<r->value<<std::endl;
+        inorder(r->right);
+    }
+}
+
+void BinaryTree::postorder(Node *r){
+    if(r !=nullptr){
+        postorder(r->left);
+        postorder(r->right);
+        std::cout<<r->value<<std::endl;
+    }
+}
+
+
+
 

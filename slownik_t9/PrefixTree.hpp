@@ -1,3 +1,5 @@
+#ifndef PREFIX_TREE_HPP
+#define PREFIX_TREE_HPP
 #include "LinkedList.hpp"
 #include <string>
 #include <iostream>
@@ -105,3 +107,4 @@ List<std::string> PrefixTree::search(std::string word){
 
 
 
+#endif

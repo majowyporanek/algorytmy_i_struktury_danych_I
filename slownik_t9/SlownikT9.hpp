@@ -1,6 +1,7 @@
 #ifndef SLOWNIK_T9_HPP
 #define SLOWNIK_T9_HPP
 #include "PrefixTree.hpp"
+#include <vector>
 
 class SlownikT9 {
 private:
@@ -13,7 +14,11 @@ public:
     ~SlownikT9();
     void readWords(std::string filepath);
     List<std::string> find_words_by_prefix(std::string prefix);
-};
+    List<std::string> search_words_by_numbers(int numbers[], int lenght, std::string prefix, List<std::string>&result);
+    List<List<std::string>> search_words_by_numbers(int numbers[], int length, std::string prefix, List<List<std::string>> &result);
+    List<List<std::string>> get_words();
+    std::vector<std::string>wordstore;
+    };
 
 SlownikT9::SlownikT9(std::string filepath) : filepath(filepath){
     nums_to_letters[2] = "abc";
@@ -43,8 +48,39 @@ void SlownikT9::readWords(std::string filepath){
 }
 
 List<std::string> SlownikT9::find_words_by_prefix(std::string prefix){
-    List<std::string> foundedwords = words_store.search("prefix");
+    List<std::string> foundedwords = words_store.search(prefix);
     return foundedwords;
+}
+
+List<std::string> SlownikT9::search_words_by_numbers(int numbers[], int length, std::string prefix, List<std::string> &result) {
+    if(length == 0){
+        return find_words_by_prefix(prefix);
+    }
+
+    // List<std::string> result;
+    std::string letters = nums_to_letters[numbers[0]];
+
+    for(int i = 0; i < letters.length(); i++){
+        std::string new_prefix = prefix + letters[i];
+        List<std::string> words = search_words_by_numbers(numbers + 1, length -1, new_prefix, result);
+        if(!words.empty()){
+            auto it = words.begin();
+            while(!words.empty()){
+                std::string w = words.pop_front();
+                wordstore.push_back(w);
+                it++;
+            }
+        }
+    }
+    return result;
+}
+
+std::vector<std::string>get_words(int numbers[],int len, SlownikT9 &O){
+    O.wordstore.clear();
+    std::string prefix = "";
+    List<std::string>resultsmy;
+    O.search_words_by_numbers(numbers,len, prefix, resultsmy);
+    return O.wordstore;
 }
 
 

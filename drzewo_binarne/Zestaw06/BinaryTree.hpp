@@ -9,21 +9,20 @@ private:
         Node(int value_) : left(nullptr), right(nullptr), value(value_){}; 
     };
 
-
-
     int size_; //liczba wezlow
     Node *root;
 
 public:
     BinaryTree();
     ~BinaryTree();
+    void deleteT(Node *r);
     void insert(int x);
     Node* search(int x);
-    Node* searchRecursive(int x);
+    Node* searchRecursive(int x, Node* r);
     int size();
     int minimum();
     int maximim();
-    int depth();
+    int depth(Node *r);
     void inorder(Node *r);
     void preorder(Node *r);
     void postorder(Node *r);
@@ -32,6 +31,15 @@ public:
 
 BinaryTree::BinaryTree() : size_(0), root(nullptr){}
 BinaryTree::~BinaryTree(){
+    deleteT(root);
+}
+
+void BinaryTree::deleteT(Node *r){
+    if(r == nullptr) return;
+
+    deleteT(r->left);
+    deleteT(r->right);
+    delete r;
 }
 
 void BinaryTree::insert(int x) {
@@ -103,6 +111,21 @@ BinaryTree::Node* BinaryTree::search(int x){
     return searchedNode;
 }
 
+
+BinaryTree::Node* BinaryTree::searchRecursive(int x, Node* r){
+    if(r == nullptr){return nullptr;}
+
+        if(r->value == x){
+            return r;
+        }else {
+            if(r->value>x){
+            return searchRecursive(x, r->left);
+            }
+            return searchRecursive(x, r->right);
+        }
+}
+
+
 int BinaryTree::minimum(){
     if(root == nullptr){
         throw std::out_of_range("EMPTY");
@@ -135,8 +158,15 @@ int BinaryTree::maximim(){
     return maxEl;
 }
 
-int BinaryTree::depth(){
-    return 0;
+int BinaryTree::depth(Node* r){
+    if(r == nullptr){
+        return 0;
+    }else {
+        int leftH = depth(r->left);
+        int rightH = depth(r->right);
+
+        return (leftH > rightH) ? (leftH + 1) : (rightH + 1);
+    }
 }
 
 int BinaryTree::size(){return size_;}

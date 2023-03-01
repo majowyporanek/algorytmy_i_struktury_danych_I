@@ -11,7 +11,7 @@ public:
         Node *next;
     };
 
-    private:
+    // private:
     Node *head; //pierwsszy wezel
     Node *tail; //ostatni wezel
     int size_;
@@ -268,6 +268,8 @@ int remove(T x){
 Node* head_(){
     return head;
 }
+
+
 
 };
 

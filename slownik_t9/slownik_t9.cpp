@@ -3,28 +3,13 @@
 #include "PrefixTree.hpp"
 #include "Dict.hpp"
 #include "SlownikT9.hpp"
+#include "vector"
 
 int main() {
-    // PrefixTree words_store;
-    // Dict<std::string, std::string> letter_finder;
-    // std::string numsToLetters[10];
-    // std::ifstream file("./words.txt");
     SlownikT9 slownik("./words.txt");
+    int numbers[] = {9,4,2,8,3,8,3,7};
+    int len = sizeof(numbers)/sizeof(int);
+    std::vector<std::string>v = get_words(numbers,len,slownik);
 
-    // // std::cout<<words_store.search_one("april");
-    // List<std::string> foundedwords = words_store.search("cat");
-    // auto it = foundedwords.begin();
-    // while(it != nullptr){
-    //     std::cout<<it->value<<std::endl;
-    //     it++;
-    // }
-
-    // char albet[26];
-
-    // for (int ch = 'a'; ch <= 'z'; ch++) {
-    // //do ch-'a' because we start at index 0
-    //     albet[ch-'a'] = ch;
-    //     std::cout<<char(ch)<<std::endl;
-    // }
 
 }

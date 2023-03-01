@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1290</width>
+    <height>1544</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>230</red>
+        <green>254</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>230</red>
+        <green>254</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>230</red>
+        <green>254</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="cursor">
+   <cursorShape>CrossCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>SŁOWNIK T9</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QPushButton" name="button_1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 5em;
+	height:5em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 5em;
+	height:5em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>1 </string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="button_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>5 JKL</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="button_4">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>4 GHI</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="button_7">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>7 PQRS</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="button_9">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>9 WXYZ</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="button_6">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>6 MNO</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="button_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>3 DEF</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="button_star">
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #bae8e8;
+	color:#fffffe;
+	border: 3px solid  #e3f6f5;
+	border-radius: 20px 20px 20px 40px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 5em;
+	height:5em;
+}
+
+QPushButton:pressed{
+	background-color: #e3f6f5;;
+	color:#fffffe;
+	border: 3px solid  #e3f6f5;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 5em;
+	height:5em;
+	margin: 0;
+}</string>
+      </property>
+      <property name="text">
+       <string>*</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="button_hash">
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #bae8e8;
+	color:#fffffe;
+	border: 3px solid  #e3f6f5;
+	border-radius: 20px 20px 20px 40px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 5em;
+	height:5em;
+}
+
+QPushButton:pressed{
+	background-color: #e3f6f5;;
+	color:#fffffe;
+	border: 3px solid  #e3f6f5;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 5em;
+	height:5em;
+	margin: 0;
+}</string>
+      </property>
+      <property name="text">
+       <string>#</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="button_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>2 ABC</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="button_zero">
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 5em;
+	height:5em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 5em;
+	height:5em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="button_8">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:  #e3f6f5;
+	border: 3px solid #bae8e8;
+	color:#0e172c;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	margin: 0;
+	width: 6em;
+	height:6em;
+}
+
+QPushButton:pressed{
+	background-color:#bae8e8;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: bold 25px;
+	padding: 10px;
+	width: 6em;
+	height:6em;
+	margin: 0;
+	color:#0e172c;
+}</string>
+      </property>
+      <property name="text">
+       <string>8 TUV</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="QLineEdit" name="Display">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tlwg Mono</family>
+        <pointsize>-1</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{	
+	background-color:  #fffffe;
+	color:#0e172c;
+	border: 2px solid #bae8e8;
+	border-radius: 20px;
+	font: 60px;
+	padding: 0 0.5em;
+	text-align: center;
+	letter-spacing: 1px;
+	margin: 0;
+	height:4em;
+}</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1290</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

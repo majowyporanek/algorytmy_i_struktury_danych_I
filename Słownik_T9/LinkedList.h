@@ -17,7 +17,7 @@ public:
     int size_;
     public:
 
-    struct Iterator 
+    struct Iterator
     {
     using pointer = Node*;
     using reference = Node&;
@@ -96,7 +96,7 @@ List() : head(nullptr), tail(nullptr), size_(0){};
 
     //tworze nowy Node
     Node *newNode = new Node;
- 
+
     if(i == 0) {
         //wstawianie na poczatek listy
         newNode->value = x;
@@ -115,8 +115,8 @@ List() : head(nullptr), tail(nullptr), size_(0){};
         newNode->next = wsk;
         wsk->prev->next = newNode;
         wsk->prev = newNode;
-        wsk = nullptr; // wskaznik juz nie wskazuje na dany element 
-        delete wsk;        
+        wsk = nullptr; // wskaznik juz nie wskazuje na dany element
+        delete wsk;
     }
     size_++;
 }
@@ -129,7 +129,7 @@ List() : head(nullptr), tail(nullptr), size_(0){};
 
     if(head==nullptr) {
         throw std::out_of_range("EMPTY");
-    } 
+    }
     Node *erasedNode = new Node;
     T erasedValue;
     erasedNode = head;
@@ -150,13 +150,13 @@ List() : head(nullptr), tail(nullptr), size_(0){};
         }
 
         erasedValue = erasedNode->value;
-        erasedNode->prev->next = erasedNode->next; 
+        erasedNode->prev->next = erasedNode->next;
         if(erasedNode->next)  {
             //jezeli nie jest to sytuacja gdzie usuwamy tail
             erasedNode->next->prev = erasedNode->prev;
         }else {
             tail = erasedNode->prev;
-        }  
+        }
         delete erasedNode;
     }
     size_--;
@@ -215,7 +215,7 @@ List() : head(nullptr), tail(nullptr), size_(0){};
 
 void clear(){
     if(head==nullptr) {
-        throw std::out_of_range("EMPTY");   
+        throw std::out_of_range("EMPTY");
     }
     Node *current(head); //przypisanie noda current do noda head
     while(current) {
@@ -229,10 +229,10 @@ void clear(){
 
 int find(T x) {
     if(head==nullptr) {
-        throw std::out_of_range("EMPTY");   
+        throw std::out_of_range("EMPTY");
     }
     Node *current(head);
-    int pos = 0; 
+    int pos = 0;
     while(current) {
         if (current->value == x) {return pos;};
         current = current->next;
@@ -244,7 +244,7 @@ int find(T x) {
 
 int remove(T x){
     if(head==nullptr) {
-        throw std::out_of_range("EMPTY");   
+        throw std::out_of_range("EMPTY");
     }
 
     int duplicates = 0;

@@ -1,0 +1,41 @@
+Projekt: SŁOWNIK T9
+autor: Klaudia Chwistek
+
+Opis projektu:
+
+Program używający słownika T9 do wyszukiwania wyrazów z nakładką graficzną
+imitującą klawiaturę numerczyną.
+
+Słowa przechowywane są w strukturze danych PrefixTree (Trie).
+Klasa PrefixTree zawiera metodę search, która zwraca wszystkie słowa w drzewie
+zaczynające się na podany prefix.
+
+Klasa Słownik T9 łączy odpowiednie numery z klawiatury numerycznej telefonu 
+z odpowiadającymi im literami.
+Zawiera funkcję search_words_by_numbers, która przeszukuje rekurencyjnie wszystkie możliwe
+kombinacje prefixów uzyskanych z klawiatury numerycznej. 
+
+Funkcja get_words zwraca vektor z rezultatem przeszukiwań. 
+
+
+Graficzny interfejs został utworzony w QT.
+DZIAŁANIE:
+-> Użytkownik wprowadza słowo poprzez wciskanie odpowiednich cyfr
+-> po wciścnięciu "#" program wyszukuje podpowiedzi i pokazuje pierwszą możliwość
+-> aby zobaczyć reszte możliwych podpowiedzi należy wcisnąć "*"
+-> jeżeli dojdziemy do końca wszystkich podpowiedzi -> wracamy do początkowej propozycji
+-> podpowiedzi są posegregowane w kolejnośći rosnącej względem ilości liter
+w słownie, zaczynająć od długości jaka została podana przez użytkownik
+
+
+URUCHAMIANIE:
+
+Aby uruchomić projekt należy otworzyć projekt w terminalu i wpisać następujące
+komendy:
+
+qmake T9_dictionary.pro
+make
+./T9_dictionary
+
+aby 'posprzatac' po kompliacji:
+make clean

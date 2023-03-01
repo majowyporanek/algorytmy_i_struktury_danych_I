@@ -1,6 +1,6 @@
 #ifndef PREFIX_TREE_HPP
 #define PREFIX_TREE_HPP
-#include "LinkedList.hpp"
+#include "LinkedList.h"
 #include <string>
 #include <iostream>
 #define ALPHABET_SIZE 26
@@ -8,7 +8,7 @@
 class PrefixTree
 {
 
-public:    
+public:
 struct Node {
     char value;
     Node* children[ALPHABET_SIZE];
@@ -17,7 +17,7 @@ struct Node {
         for(int i = 0; i<ALPHABET_SIZE; i++){
             children[i] = nullptr;
         }
-    }; 
+    };
 };
 
 private:
@@ -25,6 +25,8 @@ private:
 public:
     PrefixTree();
     ~PrefixTree();
+    void deleteNodes(Node* node);
+    void clear();
     void insert(std::string word);
     std::string search_one(std::string word);
     List<std::string> search(std::string word);
@@ -37,13 +39,14 @@ PrefixTree::PrefixTree() : root(new Node('\0')){}
 
 PrefixTree::~PrefixTree()
 {
+  clear();
 }
 
 void PrefixTree::insert(std::string word){
 
     Node* current = root;
 
-    for(int i = 0 ; i<word.length(); i++){
+    for(int i = 0 ; i<(int)word.length(); i++){
         int index = word[i] - 'a'; //index w tablicy
 
         if(!current->children[index])
@@ -53,27 +56,26 @@ void PrefixTree::insert(std::string word){
     current->isEnd = true;
 }
 
-std::string PrefixTree::search_one(std::string word){
-    Node* current = root;
-    std::string found_word = "";
-    for(int i = 0; i < word.length(); i++) {
-        int index = word[i] - 'a';
-        if(!current->children[index])
-            return "";
-        found_word += current->children[index]->value;
-        current = current->children[index];
-    }
+// std::string PrefixTree::search_one(std::string word){
+//     Node* current = root;
+//     std::string found_word = "";
+//     for(int i = 0; i < word.length(); i++) {
+//         int index = word[i] - 'a';
+//         if(!current->children[index])
+//             return "";
+//         found_word += current->children[index]->value;
+//         current = current->children[index];
+//     }
 
-    if((current->isEnd))
-        return found_word;
-    return "";
-}
+//     if((current->isEnd))
+//         return found_word;
+//     return "";
+// }
 
 void PrefixTree::search_words(Node *current, std::string found_w, List<std::string> &all_words){
     if(!current) return;
 
     found_w += current->value;
-    // std::cout<<current->value<<std::endl;
     if(current->isEnd)
         all_words.push_back(found_w);
     for(int i = 0; i < ALPHABET_SIZE; i++){
@@ -85,7 +87,7 @@ void PrefixTree::search_words(Node *current, std::string found_w, List<std::stri
 List<std::string> PrefixTree::search(std::string word){
     Node *current = root;
     std::string found_word = "";
-    for(int i = 0; i < word.length(); i++){
+    for(int i = 0; i <(int) word.length(); i++){
         int index = word[i] - 'a';
         if(!current->children[index]){
             List<std::string>newList;
@@ -105,6 +107,22 @@ List<std::string> PrefixTree::search(std::string word){
     return words;
 }
 
+void PrefixTree::deleteNodes(Node *node) {
+    if (node == nullptr) {
+        return;
+    }
+    for (int i = 0; i < ALPHABET_SIZE; i++) {
+        if (node->children[i]) {
+            deleteNodes(node->children[i]);
+        }
+    }
+    delete node;
+}
+
+void PrefixTree::clear() {
+    deleteNodes(root);
+    root = new Node('\0');
+}
 
 
 #endif

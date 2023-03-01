@@ -1,6 +1,7 @@
 #ifndef SLOWNIK_T9_HPP
 #define SLOWNIK_T9_HPP
-#include "PrefixTree.hpp"
+#include "PrefixTree.h"
+#include <fstream>
 #include <vector>
 
 class SlownikT9 {
@@ -11,7 +12,6 @@ private:
 
 public:
     SlownikT9(std::string filepath);
-    ~SlownikT9();
     void readWords(std::string filepath);
     List<std::string> find_words_by_prefix(std::string prefix);
     List<std::string> search_words_by_numbers(int numbers[], int lenght, std::string prefix, List<std::string>&result);
@@ -31,8 +31,6 @@ SlownikT9::SlownikT9(std::string filepath) : filepath(filepath){
     nums_to_letters[9] = "wxyz";
     readWords(filepath);
 }
-
-SlownikT9::~SlownikT9() {}
 
 void SlownikT9::readWords(std::string filepath){
     std::ifstream file(filepath);
@@ -60,7 +58,7 @@ List<std::string> SlownikT9::search_words_by_numbers(int numbers[], int length, 
     // List<std::string> result;
     std::string letters = nums_to_letters[numbers[0]];
 
-    for(int i = 0; i < letters.length(); i++){
+    for(int i = 0; i < (int)letters.length(); i++){
         std::string new_prefix = prefix + letters[i];
         List<std::string> words = search_words_by_numbers(numbers + 1, length -1, new_prefix, result);
         if(!words.empty()){
